@@ -26,17 +26,11 @@ struct MenuView: View {
                 SettingView()
             }
             
-            Text("v0.1.0.1")
+            Text("v0.1.2")
                 .font(.footnote)
                 .foregroundColor(.gray)
                 .padding()
         }
-    }
-}
-
-struct SettingView: View {
-    var body: some View {
-        Text("Setting View")
     }
 }
 
