@@ -58,7 +58,7 @@ struct ConversationView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
-            .padding(.top)
+            .padding(.bottom, 30)
         }
     }
 

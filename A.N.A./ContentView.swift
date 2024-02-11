@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isConversationActive = false
-    @State private var isTrainActive = false
-
+    @State private var isCreateActive = false
+    @State private var isMenuActive = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -22,48 +22,34 @@ struct ContentView: View {
                 Text("Create your own Autonomous Neural Avatar")
                 
                 Button(action: {
-                    isTrainActive = true
+                    isCreateActive = true
                 }) {
-                    Text("Train")
+                    Text("Create")
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
-                .sheet(isPresented: $isTrainActive) {
-                    HStack {
-                        Button(action: {
-                            isConversationActive = true
-                        }) {
-                            Text("Conversation")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                        }
-                        .sheet(isPresented: $isConversationActive) {
-                            ConversationView()
-                        }
-                        
-                        Button(action: {
-                        }) {
-                            Text("Voice")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                        }
-                        .sheet(isPresented: $isConversationActive) {
-                            Text("Voice Button Tapped")
-                        }
+                .sheet(isPresented: $isCreateActive) {
+                    CreateView()
                 }
-                }
-                .padding(.top, 30)
             }
-            .navigationTitle("Main")
+            .navigationTitle("A.N.A.")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        isMenuActive = true
+                    }) {
+                        Image(systemName: "line.horizontal.3")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                    }
+                }
+            }
+            .sheet(isPresented: $isMenuActive) {
+                MenuView()
+            }
         }
     }
 }
