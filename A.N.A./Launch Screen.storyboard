@@ -43,7 +43,7 @@
                                     <fragment content="C">
                                         <attributes>
                                             <color key="NSColor" systemColor="systemPurpleColor"/>
-                                            <font key="NSFont" size="36" name="SnellRoundhand-Bold"/>
+                                            <font key="NSFont" size="72" name="SnellRoundhand-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>

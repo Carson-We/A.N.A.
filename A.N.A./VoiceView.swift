@@ -21,7 +21,7 @@ struct VoiceView: View {
             
             HStack {
                 Button(action: {
-                    previousSentence()
+                    changeSentence(by: -1)
                 }) {
                     Text("Previous")
                         .font(.headline)
@@ -33,7 +33,7 @@ struct VoiceView: View {
                 .disabled(currentIndex == 0)
                 
                 Button(action: {
-                    nextSentence()
+                    changeSentence(by: 1)
                 }) {
                     Text("Next")
                         .font(.headline)
@@ -50,15 +50,10 @@ struct VoiceView: View {
         }
     }
     
-    func previousSentence() {
-        if currentIndex > 0 {
-            currentIndex -= 1
-        }
-    }
-    
-    func nextSentence() {
-        if currentIndex < sentences.count - 1 {
-            currentIndex += 1
+    func changeSentence(by offset: Int) {
+        let newIndex = currentIndex + offset
+        if newIndex >= 0 && newIndex < sentences.count {
+            currentIndex = newIndex
         }
     }
     

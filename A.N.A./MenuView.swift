@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+extension UIApplication {
+    var appVersion: String? {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+}
+
 struct MenuView: View {
     @State private var isSettingViewActive = false
     
@@ -26,10 +32,12 @@ struct MenuView: View {
                 SettingView()
             }
             
-            Text("v0.1.2")
-                .font(.footnote)
-                .foregroundColor(.gray)
-                .padding()
+            if let appVersion = UIApplication.shared.appVersion {
+                Text("v\(appVersion)")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding()
+            }
         }
     }
 }
