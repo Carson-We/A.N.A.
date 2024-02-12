@@ -1,0 +1,5 @@
+This is the first sentence.
+Here's another sentence.
+A third sentence for the example.
+The fourth sentence is here.
+And finally, the fifth sentence.
