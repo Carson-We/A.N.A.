@@ -1,0 +1,8 @@
+//
+//  sentence.txt
+//  A.N.A.
+//
+//  Created by Carson Wu on 2/13/24.
+//
+
+import Foundation
